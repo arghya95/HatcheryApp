@@ -1,0 +1,58 @@
+<ion-header>
+  
+</ion-header>
+
+<ion-content padding>
+  <table width="100%" class="headerlist">
+    <tr>
+      <td><img src="../assets/imgs/chicken_egg_312378.jpg"/></td>
+      <td><h3>Dimari's Chicken</h3></td>
+      <td><ion-searchbar
+        [(ngModel)]="myInput"
+        [showCancelButton]="shouldShowCancel"
+        (ionInput)="onInput($event)"
+        (ionCancel)="onCancel($event)">
+      </ion-searchbar></td>
+      <td><ion-icon class="callicon" name="md-call"></ion-icon></td>
+      <td><p class="order-text">Call for Orders Delivery</p>
+        <p class="order-no">+91 - 9051965744</p></td>
+    </tr>
+  </table>
+    <ion-navbar>
+        <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>
+          <table width="100%" class="tableList">
+         
+          <tr style="background:#04496e;">
+              <th>Home</th>
+              <th>Our Service</th>
+              <th>Recipes</th>
+              <th>Contact Us</th>
+              <th>Find a Store</th>
+              <th>Activities</th>
+              <th>Carrier</th>
+          </tr>
+          </table>
+        </ion-title>
+      </ion-navbar>
+  
+        <ion-slides pager>
+            <ion-slide *ngFor="let slide of slides">
+              <!-- <ion-toolbar>
+                <ion-buttons end>
+                  <button ion-button color="primary">Skip</button>
+                </ion-buttons>
+              </ion-toolbar> -->
+              <img [src]="slide.image" class="slide-image"/>
+              <h2 class="slide-title" [innerHTML]="slide.title"></h2>
+              <p [innerHTML]="slide.description"></p>
+            </ion-slide>
+          </ion-slides>
+</ion-content>
+<ion-footer>
+    <ion-toolbar>
+      <ion-title>Footer</ion-title>
+    </ion-toolbar>
+  </ion-footer>
